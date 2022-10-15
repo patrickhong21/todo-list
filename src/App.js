@@ -1,7 +1,8 @@
 import './App.css';
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import List from "./components/List";
-import Form from "./components/Form";
+import Quote from './components/Quote';
+
 
 function App() {
   const [todos, setTodos] = useState([{title:"",date:""}]);
@@ -18,6 +19,9 @@ function App() {
 
   return (
     <div className="App">
+    <Quote/>
+      <button onClick={onClick}>Click me</button>
+      <h1>Hello World</h1>
       <Form date = {date} setDate = {setDate} input = {input} setInput = {setInput}/>
       <button onClick={onClick}>Submit Task:</button>
       <h1>Hello World</h1>
