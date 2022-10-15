@@ -1,7 +1,4 @@
-# Fall Hacks 20222
-
-# To-Do-List
-
+# Fall Hacks 2022 To-Do-List
 
 ## Inspiration
 * The theme of this event was "In the Last Minute," and the first thing that was brought to our minds was the to do list.Unlike other to do list, our to do list features a timer that counts down to when the assignment is due. These assignments are picked by the user and is classified as "urgent". By doing so,it lets the user know how much time you have left before you have to hand it in. Creating a simple to do list website allows us to keep track of all the deadlines for different classes while also being reminded how much time you have left.
