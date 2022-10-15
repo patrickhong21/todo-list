@@ -3,15 +3,18 @@ import React, { useState, useEffect } from "react";
 import List from "./components/List";
 import Quote from './components/Quote';
 
+
 function App() {
-  const [todoNames, setTodoNames] = useState([]);
+  const [todos, setTodos] = useState([{title:"",date:""}]);
+  const [date, setDate] = useState(new Date());
+  const [input, setInput] = useState("");
 
   useEffect(() => {
     console.log("array updated");
-  }, [todoNames]);
+  }, [todos]);
 
   const onClick = () => {
-    setTodoNames([...todoNames, "1"]);
+    setTodos([...todos, {title:input, date:date}]);
   }
 
   return (
@@ -19,11 +22,10 @@ function App() {
     <Quote/>
       <button onClick={onClick}>Click me</button>
       <h1>Hello World</h1>
-      <form>
-        <label>Task: <input type="text" name="taskName" /></label>
-        <input type="submit" value="Submit" />
-      </form>
-      <List todoNames={todoNames}/>
+      <Form date = {date} setDate = {setDate} input = {input} setInput = {setInput}/>
+      <button onClick={onClick}>Submit Task:</button>
+      <h1>Hello World</h1>
+      <List todos={todos}/>
     </div>
   );
 }
