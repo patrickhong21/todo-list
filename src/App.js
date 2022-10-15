@@ -5,9 +5,9 @@ import List from "./components/List";
 function App() {
   const [todoNames, setTodoNames] = useState([]);
 
-  // useEffect(() => {
-  //   console.log("array updated");
-  // }, [todoNames]);
+  useEffect(() => {
+    console.log("array updated");
+  }, [todoNames]);
 
   const onClick = () => {
     setTodoNames([...todoNames, "1"]);
