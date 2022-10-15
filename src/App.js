@@ -1,23 +1,27 @@
 import './App.css';
 import { useState, useEffect } from "react";
 import List from "./components/List";
+import Form from "./components/Form";
 
 function App() {
-  const [todoNames, setTodoNames] = useState([]);
+  const [todos, setTodos] = useState([{title:"",date:""}]);
+  const [date, setDate] = useState(new Date());
+  const [input, setInput] = useState("");
 
   useEffect(() => {
     console.log("array updated");
-  }, [todoNames]);
+  }, [todos]);
 
   const onClick = () => {
-    setTodoNames([...todoNames, "1"]);
+    setTodos([...todos, {title:input, date:date}]);
   }
 
   return (
     <div className="App">
-      <button onClick={onClick}>Click me</button>
+      <Form date = {date} setDate = {setDate} input = {input} setInput = {setInput}/>
+      <button onClick={onClick}>Submit Task:</button>
       <h1>Hello World</h1>
-      <List todoNames={todoNames}/>
+      <List todos={todos}/>
     </div>
   );
 }
